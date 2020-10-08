@@ -3,29 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_home"
         android:name="com.cgg.navjetpackapp.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_categories"
-        android:name="com.cgg.navjetpackapp.ui.dashboard.DashboardFragment"
-        android:label="Categories"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/nav_gallery"
+        android:name="com.cgg.navjetpackapp.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <argument
+            android:name="ACTION_GALLERY"
+            app:argType="string"
+            android:defaultValue="default" />
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+        <argument
+            android:name="BOOLEAN_VAL"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="USER_DATA"
+            app:argType="com.cgg.navjetpackapp.User"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="USER_LIST"
+            app:argType="com.cgg.navjetpackapp.User[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_search"
-        android:name="com.cgg.navjetpackapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/nav_slideshow"
+        android:name="com.cgg.navjetpackapp.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+        <argument
+            android:name="ACTION_SLIDESHOW"
+            app:argType="integer" />
+        <argument
+            android:name="USER_LIST"
+            app:argType="com.cgg.navjetpackapp.User[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_cart"
-        android:name="com.cgg.navjetpackapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/nav_tools"
+        android:name="com.cgg.navjetpackapp.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.cgg.navjetpackapp.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.cgg.navjetpackapp.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
 </navigation>

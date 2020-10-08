@@ -8,11 +8,6 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(AppConstants.CAT_TO_DEST_SEL, "");
                     editor.commit();
                     String curFrag = navController.getCurrentDestination().getLabel().toString();
-                    if (!curFrag.contains(HomeFragment.class.getSimpleName())) {
+                    if (!curFrag.contains(MainFragment.class.getSimpleName())) {
                         navController.navigate(R.id.homeFragment);
                     }
                 } else {
@@ -110,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             String catFlag = sharedPreferences.getString(AppConstants.CAT_TO_DEST_SEL, "");
             if (TextUtils.isEmpty(catFlag)) {
                 String curFrag = navController.getCurrentDestination().getLabel().toString();
-                if (!curFrag.contains(HomeFragment.class.getSimpleName())) {
+                if (!curFrag.contains(MainFragment.class.getSimpleName())) {
                     navController.navigate(R.id.homeFragment);
                 } else {
                     finish();

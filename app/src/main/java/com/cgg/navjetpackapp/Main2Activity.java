@@ -30,10 +30,12 @@ public class Main2Activity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_categories, R.id.navigation_search, R.id.navigation_cart)
+                R.id.navigation_home, R.id.navigation_categories,
+                R.id.navigation_search, R.id.navigation_cart)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this, navController,
+                appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
         navView.getMenu().findItem(R.id.navigation_home).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -44,7 +46,7 @@ public class Main2Activity extends AppCompatActivity {
                     editor.putString(AppConstants.CAT_TO_DEST_SEL, "");
                     editor.commit();
                     String curFrag = navController.getCurrentDestination().getLabel().toString();
-                    if (!HomeFragment.class.getSimpleName().contains(curFrag)) {
+                    if (!MainFragment.class.getSimpleName().contains(curFrag)) {
                         navController.navigate(R.id.navigation_home);
                     }
                 } else {
@@ -89,6 +91,7 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
             }
         });
+
         navView.getMenu().findItem(R.id.navigation_cart).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -116,7 +119,7 @@ public class Main2Activity extends AppCompatActivity {
             String catFlag = sharedPreferences.getString(AppConstants.CAT_TO_DEST_SEL, "");
             if (TextUtils.isEmpty(catFlag)) {
                 String curFrag = navController.getCurrentDestination().getLabel().toString();
-                if (!HomeFragment.class.getSimpleName().contains(curFrag)) {
+                if (!MainFragment.class.getSimpleName().contains(curFrag)) {
                     navController.navigate(R.id.navigation_home);
                 } else {
                     finish();
