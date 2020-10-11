@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.cgg.navjetpackapp.ui.home.BottomHomeFragment"
+        android:name="com.cgg.navjetpackapp.bottom.BottomHomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_categories"
-        android:name="com.cgg.navjetpackapp.ui.dashboard.DashboardFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.dashboard.DashboardFragment"
         android:label="Categories"
         tools:layout="@layout/fragment_dashboard" >
         <argument
@@ -23,13 +23,13 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.cgg.navjetpackapp.ui.notifications.NotificationsFragment"
+        android:name="com.cgg.navjetpackapp.bottom.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.cgg.navjetpackapp.ui.dashboard.DashboardFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.dashboard.DashboardFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

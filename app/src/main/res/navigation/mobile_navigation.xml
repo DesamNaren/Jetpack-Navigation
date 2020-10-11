@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.cgg.navjetpackapp.ui.home.HomeFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.cgg.navjetpackapp.ui.gallery.GalleryFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" >
         <argument
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.cgg.navjetpackapp.ui.slideshow.SlideshowFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" >
         <argument
@@ -60,19 +60,19 @@
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.cgg.navjetpackapp.ui.tools.ToolsFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.tools.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.cgg.navjetpackapp.ui.share.ShareFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.cgg.navjetpackapp.ui.send.SendFragment"
+        android:name="com.cgg.navjetpackapp.navdrawer.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 </navigation>

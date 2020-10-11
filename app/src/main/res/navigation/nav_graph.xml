@@ -4,7 +4,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.cgg.navjetpackapp.MainFragment"
+        android:name="com.cgg.navjetpackapp.bottom.MainFragment"
         android:label="HomeFragment" >
         <argument
             android:name="NAME"
@@ -12,7 +12,7 @@
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.cgg.navjetpackapp.CategoriesFragment"
+        android:name="com.cgg.navjetpackapp.bottom.CategoriesFragment"
         android:label="CategoriesFragment" >
         <action
             android:id="@+id/action_categoriesFragment_to_searchFragment"
@@ -23,10 +23,10 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.cgg.navjetpackapp.SearchFragment"
+        android:name="com.cgg.navjetpackapp.bottom.SearchFragment"
         android:label="SearchFragment" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.cgg.navjetpackapp.CartFragment"
+        android:name="com.cgg.navjetpackapp.bottom.CartFragment"
         android:label="CartFragment" />
 </navigation>

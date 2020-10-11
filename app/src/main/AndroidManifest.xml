@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".NavDrawerActivity"
+            android:name=".navdrawer.ui.NavDrawerActivity"
             android:label="@string/title_activity_nav_drawer"
             android:theme="@style/AppTheme.NoActionBar">
 
@@ -21,9 +21,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".general.MainActivity"
             android:label="@string/title_activity_main2" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".bottom.BottomNavActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
