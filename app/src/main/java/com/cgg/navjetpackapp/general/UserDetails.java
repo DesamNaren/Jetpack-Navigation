@@ -3,7 +3,7 @@ package com.cgg.navjetpackapp.general;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class User implements Parcelable {
+public class UserDetails implements Parcelable {
 
     private int id;
     private String name;
@@ -54,24 +54,24 @@ public class User implements Parcelable {
         dest.writeByte(this.flag ? (byte) 1 : (byte) 0);
     }
 
-    public User() {
+    public UserDetails() {
     }
 
-    protected User(Parcel in) {
+    protected UserDetails(Parcel in) {
         this.id = in.readInt();
         this.name = in.readString();
         this.flag = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+    public static final Parcelable.Creator<UserDetails> CREATOR = new Parcelable.Creator<UserDetails>() {
         @Override
-        public User createFromParcel(Parcel source) {
-            return new User(source);
+        public UserDetails createFromParcel(Parcel source) {
+            return new UserDetails(source);
         }
 
         @Override
-        public User[] newArray(int size) {
-            return new User[size];
+        public UserDetails[] newArray(int size) {
+            return new UserDetails[size];
         }
     };
 }

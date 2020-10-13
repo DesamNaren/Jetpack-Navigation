@@ -32,13 +32,13 @@
             app:argType="boolean"
             android:defaultValue="false" />
         <argument
-            android:name="USER_DATA"
-            app:argType="com.cgg.navjetpackapp.User"
+            android:name="U_LIST"
+            app:argType="com.cgg.navjetpackapp.general.UserDetails[]"
             app:nullable="true"
             android:defaultValue="@null" />
         <argument
-            android:name="USER_LIST"
-            app:argType="com.cgg.navjetpackapp.User[]"
+            android:name="U_DATA"
+            app:argType="com.cgg.navjetpackapp.general.UserDetails"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
@@ -49,11 +49,8 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" >
         <argument
-            android:name="ACTION_SLIDESHOW"
-            app:argType="integer" />
-        <argument
             android:name="USER_LIST"
-            app:argType="com.cgg.navjetpackapp.User[]"
+            app:argType="com.cgg.navjetpackapp.general.UserDetails[]"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>

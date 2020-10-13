@@ -15,7 +15,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.cgg.navjetpackapp.R;
-import com.cgg.navjetpackapp.general.User;
+import com.cgg.navjetpackapp.general.UserDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,28 +43,28 @@ public class HomeFragment extends Fragment {
                 HomeFragmentDirections.ActionNavHomeToNavGallery action =
                         HomeFragmentDirections.actionNavHomeToNavGallery();
 
-                List<User> list = new ArrayList<>();
-                User user = new User();
-                user.setId(1);
-                user.setName("TEST");
-                user.setFlag(true);
+                List<UserDetails> list = new ArrayList<>();
+                UserDetails userDetails = new UserDetails();
+                userDetails.setId(1);
+                userDetails.setName("TEST");
+                userDetails.setFlag(true);
 
-                User user1 = new User();
-                user1.setId(2);
-                user1.setName("TWO TEST");
-                user1.setFlag(true);
+                UserDetails userDetails1 = new UserDetails();
+                userDetails1.setId(2);
+                userDetails1.setName("TWO TEST");
+                userDetails1.setFlag(true);
 
-                list.add(user);
-                list.add(user1);
-                list.add(user);
-                list.add(user);
+                list.add(userDetails);
+                list.add(userDetails1);
+                list.add(userDetails);
+                list.add(userDetails);
 
                 action.setACTIONGALLERY("HOME TO GALLERY");
-                action.setUSERDATA(user);
+                action.setUDATA(userDetails);
 
-                User[] array = list.toArray(new User[list.size()]);
+                UserDetails[] array = list.toArray(new UserDetails[list.size()]);
 
-                action.setUSERLIST(array);
+                action.setULIST(array);
 
                 NavController navController = Navigation.findNavController(getActivity(),
                         R.id.nav_host_fragment);

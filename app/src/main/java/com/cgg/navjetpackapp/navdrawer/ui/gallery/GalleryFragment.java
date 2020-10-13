@@ -15,7 +15,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.cgg.navjetpackapp.R;
-import com.cgg.navjetpackapp.general.User;
+import com.cgg.navjetpackapp.general.UserDetails;
 
 public class GalleryFragment extends Fragment {
 
@@ -44,16 +44,17 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 GalleryFragmentDirections.ActionNavGalleryToNavSlideshow action =
-                        GalleryFragmentDirections.actionNavGalleryToNavSlideshow(0);
-                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                action.setUSERLIST(userList);
+                        GalleryFragmentDirections.actionNavGalleryToNavSlideshow();
+                NavController navController = Navigation.findNavController(getActivity(),
+                        R.id.nav_host_fragment);
+                action.setUSERLIST(userDetailsList);
                 navController.navigate(action);
             }
         });
         return root;
     }
 
-    User[] userList;
+    UserDetails[] userDetailsList;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -64,14 +65,14 @@ public class GalleryFragment extends Fragment {
             String msg = args.getACTIONGALLERY();
             tvMsg.setText(msg);
 
-            User user = args.getUSERDATA();
-            if (user != null) {
-                text_parcelable_val.setText(user.toString());
+            UserDetails userDetails = args.getUDATA();
+            if (userDetails != null) {
+                text_parcelable_val.setText(userDetails.toString());
             }
 
-            userList = args.getUSERLIST();
-            if (userList != null) {
-                tvCustomList.setText(userList[1].toString());
+            userDetailsList = args.getULIST();
+            if (userDetailsList != null) {
+                tvCustomList.setText(userDetailsList[1].toString());
             }
         }
     }

@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.cgg.navjetpackapp.R;
-import com.cgg.navjetpackapp.general.User;
+import com.cgg.navjetpackapp.general.UserDetails;
 
 public class SlideshowFragment extends Fragment {
 
@@ -48,11 +48,8 @@ public class SlideshowFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if(getArguments()!=null) {
             SlideshowFragmentArgs args = SlideshowFragmentArgs.fromBundle(getArguments());
-            int msg = args.getACTIONSLIDESHOW();
-            tvMsg.setText("DEF Value: "+msg);
-
-            User[] users = args.getUSERLIST();
-            tvMsg.setText("USER SIZE "+users.length);
+            UserDetails[] userDetails = args.getUSERLIST();
+            tvMsg.setText("USER SIZE "+ userDetails.length);
         }
     }
 }
