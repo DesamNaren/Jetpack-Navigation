@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.cgg.navjetpackapp.R;
 import com.cgg.navjetpackapp.general.UserDetails;
@@ -37,6 +39,12 @@ public class SlideshowFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(),
+                        R.id.nav_host_fragment);
+                SlideshowFragmentDirections.ActionNavSlideshowToNavSend action =
+                        SlideshowFragmentDirections.actionNavSlideshowToNavSend();
+                action.setSENDFLAG(true);
+                navController.navigate(action);
 
             }
         });

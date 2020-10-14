@@ -13,6 +13,10 @@ public class SendViewModel extends ViewModel {
         mText.setValue("This is send fragment");
     }
 
+    public void setmText(String string) {
+        mText.setValue(string);
+    }
+
     public LiveData<String> getText() {
         return mText;
     }

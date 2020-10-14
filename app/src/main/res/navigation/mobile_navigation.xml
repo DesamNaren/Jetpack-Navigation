@@ -53,6 +53,9 @@
             app:argType="com.cgg.navjetpackapp.general.UserDetails[]"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_send"
+            app:destination="@id/nav_send" />
     </fragment>
 
     <fragment
@@ -71,5 +74,10 @@
         android:id="@+id/nav_send"
         android:name="com.cgg.navjetpackapp.navdrawer.ui.send.SendFragment"
         android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_send" >
+        <argument
+            android:name="SEND_FLAG"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
 </navigation>
